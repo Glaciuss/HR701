@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C24B9E4-D82D-4069-9DA0-426D50415186}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CarService</RootNamespace>
+    <AssemblyName>HR701</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="cllUtility">
+      <HintPath>E:\testC\ZKTeco\HR_edit\EM100\EM100\bin\Debug\cllUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="DatabaseClassLibrary">
+      <HintPath>E:\Sbuys\DatabaseClassLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\Button_WOC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Class\RoundTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Class\SbuysColors.cs" />
+    <Compile Include="company.cs" />
+    <Compile Include="Form\frmAddLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmAddLine.Designer.cs">
+      <DependentUpon>frmAddLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDelLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDelLine.Designer.cs">
+      <DependentUpon>frmDelLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmEditLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmEditLine.Designer.cs">
+      <DependentUpon>frmEditLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmEditHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmEditHeader.Designer.cs">
+      <DependentUpon>frmEditHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDelHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDelHeader.Designer.cs">
+      <DependentUpon>frmDelHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmAddHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmAddHeader.Designer.cs">
+      <DependentUpon>frmAddHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDisplayAdvNotWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDisplayAdvNotWork.Designer.cs">
+      <DependentUpon>frmDisplayAdvNotWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDisplayEmployeeHoliday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDisplayEmployeeHoliday.Designer.cs">
+      <DependentUpon>frmDisplayEmployeeHoliday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDisplayEmpNotWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDisplayEmpNotWork.Designer.cs">
+      <DependentUpon>frmDisplayEmpNotWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMenu.designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSelectWorkShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSelectWorkShift.Designer.cs">
+      <DependentUpon>frmSelectWorkShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSetting.Designer.cs">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmShowMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmShowMessage.Designer.cs">
+      <DependentUpon>frmShowMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Mp3Player.cs" />
+    <Compile Include="Form\frmConfirmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmConfirmMessage.Designer.cs">
+      <DependentUpon>frmConfirmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Class\sharedFunction.cs" />
+    <EmbeddedResource Include="Form\frmAddLine.resx">
+      <DependentUpon>frmAddLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDelLine.resx">
+      <DependentUpon>frmDelLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmEditLine.resx">
+      <DependentUpon>frmEditLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmEditHeader.resx">
+      <DependentUpon>frmEditHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDelHeader.resx">
+      <DependentUpon>frmDelHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmAddHeader.resx">
+      <DependentUpon>frmAddHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDisplayAdvNotWork.resx">
+      <DependentUpon>frmDisplayAdvNotWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDisplayEmployeeHoliday.resx">
+      <DependentUpon>frmDisplayEmployeeHoliday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDisplayEmpNotWork.resx">
+      <DependentUpon>frmDisplayEmpNotWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSelectWorkShift.resx">
+      <DependentUpon>frmSelectWorkShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSetting.resx">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmShowMessage.resx">
+      <DependentUpon>frmShowMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmConfirmMessage.resx">
+      <DependentUpon>frmConfirmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\submit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ErrorFingerprint_mp3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PassFingerprint_mp3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\submit21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\substract _1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\substract _2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shutdown_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shutdown_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_subtract_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_realtime_64px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_realtime_32px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\383083_refresh_reload_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-bin.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
