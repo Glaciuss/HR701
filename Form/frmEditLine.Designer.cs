@@ -31,14 +31,9 @@ namespace CarService
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditLine));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCancel = new CarService.Class.RJButton();
-            this.btnSave = new CarService.Class.RJButton();
-            this.btnAddPic3 = new CarService.Class.RJButton();
             this.RECImg3 = new System.Windows.Forms.PictureBox();
             this.RECImg2 = new System.Windows.Forms.PictureBox();
-            this.btnAddPic2 = new CarService.Class.RJButton();
             this.RECImg1 = new System.Windows.Forms.PictureBox();
-            this.btnAddPic1 = new CarService.Class.RJButton();
             this.NMRVALUE_NEW = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.TXTERRORDESC_NEW = new System.Windows.Forms.TextBox();
@@ -46,14 +41,19 @@ namespace CarService
             this.txtImage01 = new System.Windows.Forms.TextBox();
             this.txtImage02 = new System.Windows.Forms.TextBox();
             this.txtImage03 = new System.Windows.Forms.TextBox();
-            this.btnDelPic1 = new CarService.Class.RJButton();
-            this.btnDelPic2 = new CarService.Class.RJButton();
-            this.btnDelPic3 = new CarService.Class.RJButton();
             this.dtpDocDateFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.btnZoomP1 = new System.Windows.Forms.PictureBox();
             this.btnZoomP2 = new System.Windows.Forms.PictureBox();
             this.btnZoomP3 = new System.Windows.Forms.PictureBox();
+            this.btnDelPic3 = new CarService.Class.RJButton();
+            this.btnDelPic2 = new CarService.Class.RJButton();
+            this.btnDelPic1 = new CarService.Class.RJButton();
+            this.btnAddPic3 = new CarService.Class.RJButton();
+            this.btnAddPic2 = new CarService.Class.RJButton();
+            this.btnAddPic1 = new CarService.Class.RJButton();
+            this.btnCancel = new CarService.Class.RJButton();
+            this.btnSave = new CarService.Class.RJButton();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RECImg3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RECImg2)).BeginInit();
@@ -75,72 +75,6 @@ namespace CarService
             this.panel3.Size = new System.Drawing.Size(784, 54);
             this.panel3.TabIndex = 1;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancel.BackColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCancel.BorderRadius = 20;
-            this.btnCancel.BorderSize = 0;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(392, 6);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(84, 40);
-            this.btnCancel.TabIndex = 116;
-            this.btnCancel.Text = "ยกเลิก";
-            this.btnCancel.TextColor = System.Drawing.Color.Black;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSave.BackColor = System.Drawing.Color.DarkGray;
-            this.btnSave.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSave.BorderRadius = 20;
-            this.btnSave.BorderSize = 0;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(302, 6);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(84, 40);
-            this.btnSave.TabIndex = 115;
-            this.btnSave.Text = "บันทึก";
-            this.btnSave.TextColor = System.Drawing.Color.Black;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnAddPic3
-            // 
-            this.btnAddPic3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddPic3.BackColor = System.Drawing.Color.DarkGray;
-            this.btnAddPic3.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.btnAddPic3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAddPic3.BorderRadius = 20;
-            this.btnAddPic3.BorderSize = 0;
-            this.btnAddPic3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddPic3.FlatAppearance.BorderSize = 0;
-            this.btnAddPic3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPic3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPic3.ForeColor = System.Drawing.Color.Black;
-            this.btnAddPic3.Location = new System.Drawing.Point(552, 328);
-            this.btnAddPic3.Name = "btnAddPic3";
-            this.btnAddPic3.Size = new System.Drawing.Size(84, 40);
-            this.btnAddPic3.TabIndex = 169;
-            this.btnAddPic3.Text = "เพิ่มรูป";
-            this.btnAddPic3.TextColor = System.Drawing.Color.Black;
-            this.btnAddPic3.UseVisualStyleBackColor = false;
-            this.btnAddPic3.Click += new System.EventHandler(this.btnAddPic3_Click);
-            // 
             // RECImg3
             // 
             this.RECImg3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -161,28 +95,6 @@ namespace CarService
             this.RECImg2.TabIndex = 167;
             this.RECImg2.TabStop = false;
             // 
-            // btnAddPic2
-            // 
-            this.btnAddPic2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddPic2.BackColor = System.Drawing.Color.DarkGray;
-            this.btnAddPic2.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.btnAddPic2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAddPic2.BorderRadius = 20;
-            this.btnAddPic2.BorderSize = 0;
-            this.btnAddPic2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddPic2.FlatAppearance.BorderSize = 0;
-            this.btnAddPic2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPic2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPic2.ForeColor = System.Drawing.Color.Black;
-            this.btnAddPic2.Location = new System.Drawing.Point(302, 328);
-            this.btnAddPic2.Name = "btnAddPic2";
-            this.btnAddPic2.Size = new System.Drawing.Size(84, 40);
-            this.btnAddPic2.TabIndex = 166;
-            this.btnAddPic2.Text = "เพิ่มรูป";
-            this.btnAddPic2.TextColor = System.Drawing.Color.Black;
-            this.btnAddPic2.UseVisualStyleBackColor = false;
-            this.btnAddPic2.Click += new System.EventHandler(this.btnAddPic2_Click);
-            // 
             // RECImg1
             // 
             this.RECImg1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -193,32 +105,15 @@ namespace CarService
             this.RECImg1.TabIndex = 165;
             this.RECImg1.TabStop = false;
             // 
-            // btnAddPic1
-            // 
-            this.btnAddPic1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddPic1.BackColor = System.Drawing.Color.DarkGray;
-            this.btnAddPic1.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.btnAddPic1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(61)))), ((int)(((byte)(81)))));
-            this.btnAddPic1.BorderRadius = 20;
-            this.btnAddPic1.BorderSize = 0;
-            this.btnAddPic1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddPic1.FlatAppearance.BorderSize = 0;
-            this.btnAddPic1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPic1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPic1.ForeColor = System.Drawing.Color.Black;
-            this.btnAddPic1.Location = new System.Drawing.Point(45, 328);
-            this.btnAddPic1.Name = "btnAddPic1";
-            this.btnAddPic1.Size = new System.Drawing.Size(84, 40);
-            this.btnAddPic1.TabIndex = 164;
-            this.btnAddPic1.Text = "เพิ่มรูป";
-            this.btnAddPic1.TextColor = System.Drawing.Color.Black;
-            this.btnAddPic1.UseVisualStyleBackColor = false;
-            this.btnAddPic1.Click += new System.EventHandler(this.btnAddPic1_Click);
-            // 
             // NMRVALUE_NEW
             // 
             this.NMRVALUE_NEW.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NMRVALUE_NEW.Location = new System.Drawing.Point(165, 95);
+            this.NMRVALUE_NEW.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NMRVALUE_NEW.Name = "NMRVALUE_NEW";
             this.NMRVALUE_NEW.Size = new System.Drawing.Size(76, 29);
             this.NMRVALUE_NEW.TabIndex = 163;
@@ -290,75 +185,6 @@ namespace CarService
             this.txtImage03.TabStop = false;
             this.txtImage03.Visible = false;
             // 
-            // btnDelPic1
-            // 
-            this.btnDelPic1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDelPic1.BackColor = System.Drawing.Color.DarkGray;
-            this.btnDelPic1.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.btnDelPic1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDelPic1.BorderRadius = 20;
-            this.btnDelPic1.BorderSize = 0;
-            this.btnDelPic1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelPic1.Enabled = false;
-            this.btnDelPic1.FlatAppearance.BorderSize = 0;
-            this.btnDelPic1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelPic1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelPic1.ForeColor = System.Drawing.Color.Black;
-            this.btnDelPic1.Location = new System.Drawing.Point(135, 328);
-            this.btnDelPic1.Name = "btnDelPic1";
-            this.btnDelPic1.Size = new System.Drawing.Size(60, 40);
-            this.btnDelPic1.TabIndex = 174;
-            this.btnDelPic1.Text = "ลบ";
-            this.btnDelPic1.TextColor = System.Drawing.Color.Black;
-            this.btnDelPic1.UseVisualStyleBackColor = false;
-            this.btnDelPic1.Click += new System.EventHandler(this.btnDelPic1_Click);
-            // 
-            // btnDelPic2
-            // 
-            this.btnDelPic2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDelPic2.BackColor = System.Drawing.Color.DarkGray;
-            this.btnDelPic2.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.btnDelPic2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDelPic2.BorderRadius = 20;
-            this.btnDelPic2.BorderSize = 0;
-            this.btnDelPic2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelPic2.Enabled = false;
-            this.btnDelPic2.FlatAppearance.BorderSize = 0;
-            this.btnDelPic2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelPic2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelPic2.ForeColor = System.Drawing.Color.Black;
-            this.btnDelPic2.Location = new System.Drawing.Point(391, 328);
-            this.btnDelPic2.Name = "btnDelPic2";
-            this.btnDelPic2.Size = new System.Drawing.Size(60, 40);
-            this.btnDelPic2.TabIndex = 175;
-            this.btnDelPic2.Text = "ลบ";
-            this.btnDelPic2.TextColor = System.Drawing.Color.Black;
-            this.btnDelPic2.UseVisualStyleBackColor = false;
-            this.btnDelPic2.Click += new System.EventHandler(this.btnDelPic2_Click);
-            // 
-            // btnDelPic3
-            // 
-            this.btnDelPic3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDelPic3.BackColor = System.Drawing.Color.DarkGray;
-            this.btnDelPic3.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.btnDelPic3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDelPic3.BorderRadius = 20;
-            this.btnDelPic3.BorderSize = 0;
-            this.btnDelPic3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelPic3.Enabled = false;
-            this.btnDelPic3.FlatAppearance.BorderSize = 0;
-            this.btnDelPic3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelPic3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelPic3.ForeColor = System.Drawing.Color.Black;
-            this.btnDelPic3.Location = new System.Drawing.Point(642, 328);
-            this.btnDelPic3.Name = "btnDelPic3";
-            this.btnDelPic3.Size = new System.Drawing.Size(60, 40);
-            this.btnDelPic3.TabIndex = 176;
-            this.btnDelPic3.Text = "ลบ";
-            this.btnDelPic3.TextColor = System.Drawing.Color.Black;
-            this.btnDelPic3.UseVisualStyleBackColor = false;
-            this.btnDelPic3.Click += new System.EventHandler(this.btnDelPic3_Click);
-            // 
             // dtpDocDateFrom
             // 
             this.dtpDocDateFrom.CustomFormat = "dd/MMMM/yyy";
@@ -411,6 +237,185 @@ namespace CarService
             this.btnZoomP3.TabIndex = 182;
             this.btnZoomP3.TabStop = false;
             this.btnZoomP3.Click += new System.EventHandler(this.btnZoomP3_Click);
+            // 
+            // btnDelPic3
+            // 
+            this.btnDelPic3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelPic3.BackColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic3.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelPic3.BorderRadius = 20;
+            this.btnDelPic3.BorderSize = 0;
+            this.btnDelPic3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelPic3.Enabled = false;
+            this.btnDelPic3.FlatAppearance.BorderSize = 0;
+            this.btnDelPic3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelPic3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelPic3.ForeColor = System.Drawing.Color.Black;
+            this.btnDelPic3.Location = new System.Drawing.Point(642, 328);
+            this.btnDelPic3.Name = "btnDelPic3";
+            this.btnDelPic3.Size = new System.Drawing.Size(60, 40);
+            this.btnDelPic3.TabIndex = 176;
+            this.btnDelPic3.Text = "ลบ";
+            this.btnDelPic3.TextColor = System.Drawing.Color.Black;
+            this.btnDelPic3.UseVisualStyleBackColor = false;
+            this.btnDelPic3.Click += new System.EventHandler(this.btnDelPic3_Click);
+            // 
+            // btnDelPic2
+            // 
+            this.btnDelPic2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelPic2.BackColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic2.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelPic2.BorderRadius = 20;
+            this.btnDelPic2.BorderSize = 0;
+            this.btnDelPic2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelPic2.Enabled = false;
+            this.btnDelPic2.FlatAppearance.BorderSize = 0;
+            this.btnDelPic2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelPic2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelPic2.ForeColor = System.Drawing.Color.Black;
+            this.btnDelPic2.Location = new System.Drawing.Point(391, 328);
+            this.btnDelPic2.Name = "btnDelPic2";
+            this.btnDelPic2.Size = new System.Drawing.Size(60, 40);
+            this.btnDelPic2.TabIndex = 175;
+            this.btnDelPic2.Text = "ลบ";
+            this.btnDelPic2.TextColor = System.Drawing.Color.Black;
+            this.btnDelPic2.UseVisualStyleBackColor = false;
+            this.btnDelPic2.Click += new System.EventHandler(this.btnDelPic2_Click);
+            // 
+            // btnDelPic1
+            // 
+            this.btnDelPic1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelPic1.BackColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic1.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelPic1.BorderRadius = 20;
+            this.btnDelPic1.BorderSize = 0;
+            this.btnDelPic1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelPic1.Enabled = false;
+            this.btnDelPic1.FlatAppearance.BorderSize = 0;
+            this.btnDelPic1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelPic1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelPic1.ForeColor = System.Drawing.Color.Black;
+            this.btnDelPic1.Location = new System.Drawing.Point(135, 328);
+            this.btnDelPic1.Name = "btnDelPic1";
+            this.btnDelPic1.Size = new System.Drawing.Size(60, 40);
+            this.btnDelPic1.TabIndex = 174;
+            this.btnDelPic1.Text = "ลบ";
+            this.btnDelPic1.TextColor = System.Drawing.Color.Black;
+            this.btnDelPic1.UseVisualStyleBackColor = false;
+            this.btnDelPic1.Click += new System.EventHandler(this.btnDelPic1_Click);
+            // 
+            // btnAddPic3
+            // 
+            this.btnAddPic3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddPic3.BackColor = System.Drawing.Color.DarkGray;
+            this.btnAddPic3.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.btnAddPic3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddPic3.BorderRadius = 20;
+            this.btnAddPic3.BorderSize = 0;
+            this.btnAddPic3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddPic3.FlatAppearance.BorderSize = 0;
+            this.btnAddPic3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPic3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPic3.ForeColor = System.Drawing.Color.Black;
+            this.btnAddPic3.Location = new System.Drawing.Point(552, 328);
+            this.btnAddPic3.Name = "btnAddPic3";
+            this.btnAddPic3.Size = new System.Drawing.Size(84, 40);
+            this.btnAddPic3.TabIndex = 169;
+            this.btnAddPic3.Text = "เพิ่มรูป";
+            this.btnAddPic3.TextColor = System.Drawing.Color.Black;
+            this.btnAddPic3.UseVisualStyleBackColor = false;
+            this.btnAddPic3.Click += new System.EventHandler(this.btnAddPic3_Click);
+            // 
+            // btnAddPic2
+            // 
+            this.btnAddPic2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddPic2.BackColor = System.Drawing.Color.DarkGray;
+            this.btnAddPic2.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.btnAddPic2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddPic2.BorderRadius = 20;
+            this.btnAddPic2.BorderSize = 0;
+            this.btnAddPic2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddPic2.FlatAppearance.BorderSize = 0;
+            this.btnAddPic2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPic2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPic2.ForeColor = System.Drawing.Color.Black;
+            this.btnAddPic2.Location = new System.Drawing.Point(302, 328);
+            this.btnAddPic2.Name = "btnAddPic2";
+            this.btnAddPic2.Size = new System.Drawing.Size(84, 40);
+            this.btnAddPic2.TabIndex = 166;
+            this.btnAddPic2.Text = "เพิ่มรูป";
+            this.btnAddPic2.TextColor = System.Drawing.Color.Black;
+            this.btnAddPic2.UseVisualStyleBackColor = false;
+            this.btnAddPic2.Click += new System.EventHandler(this.btnAddPic2_Click);
+            // 
+            // btnAddPic1
+            // 
+            this.btnAddPic1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddPic1.BackColor = System.Drawing.Color.DarkGray;
+            this.btnAddPic1.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.btnAddPic1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(61)))), ((int)(((byte)(81)))));
+            this.btnAddPic1.BorderRadius = 20;
+            this.btnAddPic1.BorderSize = 0;
+            this.btnAddPic1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddPic1.FlatAppearance.BorderSize = 0;
+            this.btnAddPic1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPic1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPic1.ForeColor = System.Drawing.Color.Black;
+            this.btnAddPic1.Location = new System.Drawing.Point(45, 328);
+            this.btnAddPic1.Name = "btnAddPic1";
+            this.btnAddPic1.Size = new System.Drawing.Size(84, 40);
+            this.btnAddPic1.TabIndex = 164;
+            this.btnAddPic1.Text = "เพิ่มรูป";
+            this.btnAddPic1.TextColor = System.Drawing.Color.Black;
+            this.btnAddPic1.UseVisualStyleBackColor = false;
+            this.btnAddPic1.Click += new System.EventHandler(this.btnAddPic1_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancel.BackColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancel.BorderRadius = 20;
+            this.btnCancel.BorderSize = 0;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(392, 6);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(84, 40);
+            this.btnCancel.TabIndex = 116;
+            this.btnCancel.Text = "ยกเลิก";
+            this.btnCancel.TextColor = System.Drawing.Color.Black;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSave.BackColor = System.Drawing.Color.DarkGray;
+            this.btnSave.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSave.BorderRadius = 20;
+            this.btnSave.BorderSize = 0;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Location = new System.Drawing.Point(302, 6);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(84, 40);
+            this.btnSave.TabIndex = 115;
+            this.btnSave.Text = "บันทึก";
+            this.btnSave.TextColor = System.Drawing.Color.Black;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmEditLine
             // 

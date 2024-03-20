@@ -58,7 +58,10 @@ namespace CarService
 
         private void btnEditLine_Click(object sender, EventArgs e)
         {
-            editREC();
+            string MinMaxDP = txtNumREC.Text;
+            string[] array = MinMaxDP.Split('/');
+
+            editREC(array[0], array[1]);
         }
 
         private void btnDelLine_Click(object sender, EventArgs e)
@@ -568,7 +571,7 @@ namespace CarService
             }
         }
 
-        private void editREC()
+        private void editREC(string min, string max)
         {
             if (grdREC.Rows.Count <= 0) return;
             if (grdREC.SelectedRows.Count <= 0) return;
@@ -587,8 +590,8 @@ namespace CarService
             var outputD = date.ToString("dd");
             var outputM = date.ToString("MM");
 
-
-            f.editL(empid, id, message, dp, pp1, pp2, pp3, outputD, outputM, cmb_Year.SelectedValue.ToString());
+            decimal maxInputDP = decimal.Parse(max) - (decimal.Parse(min) - decimal.Parse(dp));//DP max Adjust
+            f.editL(empid, id, message, dp, pp1, pp2, pp3, outputD, outputM, cmb_Year.SelectedValue.ToString(),maxInputDP);
             if (f.ShowDialog() == DialogResult.OK)
             {
                 editLine(txtEmpID.Text, f.eid, f.newMessage, f.newDP, f.newPP1, f.newPP2, f.newPP3, f.newDate);
@@ -598,7 +601,12 @@ namespace CarService
         private void grdREC_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (grdREC.SelectedCells[9].Value.ToString() == "True") MessageBox.Show("ไม่สามารถแก้ไขได้", "แก้ไข", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else editREC();
+            else
+            {
+                string MinMaxDP = txtNumREC.Text;
+                string[] array = MinMaxDP.Split('/');
+                editREC(array[0], array[1]);
+            } 
         }
     }
 }

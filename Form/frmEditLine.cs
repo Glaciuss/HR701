@@ -58,7 +58,7 @@ namespace CarService
             this.DialogResult = DialogResult.Cancel;
         }
 
-        public void editL(string newempid, string id, string message, string dp, string pp1, string pp2, string pp3,string opD,string opM,string ySelected)
+        public void editL(string newempid, string id, string message, string dp, string pp1, string pp2, string pp3,string opD,string opM,string ySelected, decimal dpmax)
         {
             empid = newempid;
             eid = id;
@@ -66,6 +66,7 @@ namespace CarService
             NMRVALUE_NEW.Text = dp;
             loadDate(opD,opM,ySelected);
             loadPicture();
+            NMRVALUE_NEW.Maximum = dpmax;
         }
 
         private void btnAddPic1_Click(object sender, EventArgs e)
@@ -456,6 +457,6 @@ namespace CarService
                     //Process.Start(pathPicture + "/WorkKPI_REC/" + emp_id + "/" + imgfile);
             }
             catch { }
-        }  
+        }
     }
 }
