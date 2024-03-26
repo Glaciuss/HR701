@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -26,6 +27,7 @@ namespace CarService
         public string newPP2;
         public string newPP3;
         public string newDate;
+        public decimal maxInputDP;
 
         string pathPicture = Program.pathPicture; //"http://161.82.175.125:83";
         string ftpServer = Program.FTPServer; // "ftp://161.82.175.142";
@@ -43,6 +45,7 @@ namespace CarService
             empid = emp_id;
             txtREC_ID.Text = eid;
             loadDate(ySelected);
+            NMRVALUE_NEW.Maximum = maxInputDP;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -154,7 +157,7 @@ namespace CarService
                 string selectedFileName = openFileDialog1.FileName;
                 string empCode = empid;
                 UploadFtpFile(selectedFileName, empCode, imageName);
-                MessageBox.Show("อัพโหลดรูปภาพเรียบร้อยแล้ว", "อัพโหลดรูปภาพ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("อัพโหลดรูปภาพเรียบร้อยแล้ว", "อัพโหลดรูปภาพ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             this.Cursor = Cursors.Default;
@@ -345,6 +348,7 @@ namespace CarService
                 if (CheckIfFileExists(directory + "/image01.png", ftpUser, ftpPass))
                 {
                     btnAddPic1.Text = "เปลี่ยนรูป";
+                    btnDelPic1.Enabled = true;
                     RECImg1.Load(pathPicture + "/WorkKPI_REC/" + emp_id + "/" + rec_id + "/image01.png");
                     txtImage01.Text = emp_id + "/" + rec_id + "/image01.png";
                 }
@@ -362,6 +366,7 @@ namespace CarService
                 if (CheckIfFileExists(directory + "/image02.png", ftpUser, ftpPass))
                 {
                     btnAddPic2.Text = "เปลี่ยนรูป";
+                    btnDelPic2.Enabled = true;
                     RECImg2.Load(pathPicture + "/WorkKPI_REC/" + emp_id + "/" + rec_id + "/image02.png");
                     txtImage02.Text = emp_id + "/" + rec_id + "/image02.png";
                 }
@@ -378,6 +383,7 @@ namespace CarService
                 if (CheckIfFileExists(directory + "/image03.png", ftpUser, ftpPass))
                 {
                     btnAddPic3.Text = "เปลี่ยนรูป";
+                    btnDelPic3.Enabled = true;
                     RECImg3.Load(pathPicture + "/WorkKPI_REC/" + emp_id + "/" + rec_id + "/image03.png");
                     txtImage03.Text = emp_id + "/" + rec_id + "/image03.png";
                 }
@@ -394,41 +400,63 @@ namespace CarService
         {
             if (picbx.Image == null)
             {
+                //MessageBox.Show("ไม่มีรูปภาพให้ทำการลบ", "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            try
+            if (MessageBox.Show("คุณต้องการลบรูปภาพใช่หรือไม่", "ยืนยันการลบรูปภาพ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                string emp_id = empid;
-                string rec_id = eid;
-                rec_id = rec_id.Replace("+", "-PLUS");
-                string filePath = string.Format(@"{0}/SbuysPicture/WorkKPI_REC/{1}/{2}/{3}", ftpServer, emp_id, rec_id, imageName);
-
-                if (CheckIfFileExists(filePath, ftpUser, ftpPass))
+                try
                 {
-                    FtpWebRequest request = (FtpWebRequest)WebRequest.Create(filePath);
-                    request.Method = WebRequestMethods.Ftp.DeleteFile;
-                    request.Credentials = new NetworkCredential(ftpUser, ftpPass);
+                    string emp_id = empid;
+                    string rec_id = eid;
+                    rec_id = rec_id.Replace("+", "-PLUS");
+                    string filePath = string.Format(@"{0}/SbuysPicture/WorkKPI_REC/{1}/{2}/{3}", ftpServer, emp_id, rec_id, imageName);
 
-                    using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                    if (CheckIfFileExists(filePath, ftpUser, ftpPass))
                     {
-                        picbx.Image = null;
-                        txtImage01.Text = "";
-                        txtImage02.Text = "";
-                        txtImage03.Text = "";
-                        picbx.Update();
+                        FtpWebRequest request = (FtpWebRequest)WebRequest.Create(filePath);
+                        request.Method = WebRequestMethods.Ftp.DeleteFile;
+                        request.Credentials = new NetworkCredential(ftpUser, ftpPass);
+
+                        using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                        {
+                            //MessageBox.Show("ลบรูปภาพเรียบร้อยแล้ว", "ลบรูปภาพ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            picbx.Image = null;
+                            if (imageName == "image01.png")
+                            {
+                                txtImage01.Text = "";
+                                btnAddPic1.Text = "เพิ่มรูป";
+                                btnDelPic1.Enabled = false;
+                            }
+                            else if (imageName == "image02.png")
+                            {
+                                txtImage02.Text = "";
+                                btnAddPic2.Text = "เพิ่มรูป";
+                                btnDelPic2.Enabled = false;
+                            }
+                            else if (imageName == "image03.png")
+                            {
+                                txtImage03.Text = "";
+                                btnAddPic3.Text = "เพิ่มรูป";
+                                btnDelPic3.Enabled = false;
+                            }
+
+                            picbx.Update();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่สามารถลบรูปภาพที่มาจากข้อมูลรุ่นสินค้าได้", "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("ไม่สามารถลบรูปภาพที่มาจากข้อมูลรุ่นสินค้าได้", "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    MessageBox.Show("ไม่สามารถลบรูปภาพ", "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch
-            {
-                MessageBox.Show("ไม่สามารถลบรูปภาพ", "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void loadDate(string y)
@@ -438,6 +466,61 @@ namespace CarService
             string DocumentDateFrom = sharedFunction.SQLDateString(dtpDocDateFrom.Value.Date);
         }
 
+        private void btnDelPic1_Click(object sender, EventArgs e)
+        {
+            loadPicture();
+            FTPDelete(RECImg1, "image01.png");
+            updatePicPath(txtImage01.Text, txtImage02.Text, txtImage03.Text);
+        }
+
+        private void btnDelPic2_Click(object sender, EventArgs e)
+        {
+            loadPicture();
+            FTPDelete(RECImg2, "image02.png");
+            updatePicPath(txtImage01.Text, txtImage02.Text, txtImage03.Text);
+        }
+
+        private void btnDelPic3_Click(object sender, EventArgs e)
+        {
+            loadPicture();
+            FTPDelete(RECImg3, "image03.png");
+            updatePicPath(txtImage01.Text, txtImage02.Text, txtImage03.Text);
+        }
+
+        private void btnZoomP1_Click(object sender, EventArgs e)
+        {
+            ZoomPic("image01.png");
+        }
+
+        private void btnZoomP2_Click(object sender, EventArgs e)
+        {
+            ZoomPic("image02.png");
+        }
+
+        private void btnZoomP3_Click(object sender, EventArgs e)
+        {
+            ZoomPic("image03.png");
+        }
+
+        private void ZoomPic(string fileName)
+        {
+            string emp_id = empid;
+            string rec_id = eid;
+            rec_id = rec_id.Replace("+", "-PLUS");
+            string imgfile = fileName;
+
+            string directory = string.Format(@"{0}/SbuysPicture/WorkKPI_REC/{1}/{2}", ftpServer, emp_id, rec_id);
+
+            try
+            {
+                if (CheckIfFileExists(directory + "/" + imgfile, ftpUser, ftpPass))
+                    Process.Start(pathPicture + "/WorkKPI_REC/" + emp_id + "/" + rec_id + "/" + imgfile);
+                else
+                    return;
+                //Process.Start(pathPicture + "/WorkKPI_REC/" + emp_id + "/" + imgfile);
+            }
+            catch { }
+        }
         
     }
 }

@@ -160,7 +160,7 @@ namespace CarService
                 string selectedFileName = openFileDialog1.FileName;
                 string empCode = empid;
                 UploadFtpFile(selectedFileName, empCode, imageName);
-                MessageBox.Show("อัพโหลดรูปภาพเรียบร้อยแล้ว", "อัพโหลดรูปภาพ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("อัพโหลดรูปภาพเรียบร้อยแล้ว", "อัพโหลดรูปภาพ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             this.Cursor = Cursors.Default;
@@ -337,7 +337,7 @@ namespace CarService
 
                         using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
                         {
-                            MessageBox.Show("ลบรูปภาพเรียบร้อยแล้ว", "ลบรูปภาพ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //MessageBox.Show("ลบรูปภาพเรียบร้อยแล้ว", "ลบรูปภาพ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             picbx.Image = null;
                             if (imageName == "image01.png")
                             {

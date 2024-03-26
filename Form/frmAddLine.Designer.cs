@@ -29,6 +29,7 @@ namespace CarService
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddLine));
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCancel = new CarService.Class.RJButton();
             this.btnSave = new CarService.Class.RJButton();
@@ -48,11 +49,20 @@ namespace CarService
             this.txtREC_ID = new System.Windows.Forms.TextBox();
             this.dtpDocDateFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnZoomP3 = new System.Windows.Forms.PictureBox();
+            this.btnZoomP2 = new System.Windows.Forms.PictureBox();
+            this.btnZoomP1 = new System.Windows.Forms.PictureBox();
+            this.btnDelPic3 = new CarService.Class.RJButton();
+            this.btnDelPic2 = new CarService.Class.RJButton();
+            this.btnDelPic1 = new CarService.Class.RJButton();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NMRVALUE_NEW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RECImg1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RECImg2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RECImg3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnZoomP3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnZoomP2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnZoomP1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -123,7 +133,7 @@ namespace CarService
             this.btnAddPic1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPic1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPic1.ForeColor = System.Drawing.Color.Black;
-            this.btnAddPic1.Location = new System.Drawing.Point(95, 328);
+            this.btnAddPic1.Location = new System.Drawing.Point(50, 328);
             this.btnAddPic1.Name = "btnAddPic1";
             this.btnAddPic1.Size = new System.Drawing.Size(84, 40);
             this.btnAddPic1.TabIndex = 118;
@@ -165,6 +175,11 @@ namespace CarService
             // 
             this.NMRVALUE_NEW.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NMRVALUE_NEW.Location = new System.Drawing.Point(165, 95);
+            this.NMRVALUE_NEW.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NMRVALUE_NEW.Name = "NMRVALUE_NEW";
             this.NMRVALUE_NEW.Size = new System.Drawing.Size(76, 29);
             this.NMRVALUE_NEW.TabIndex = 11;
@@ -176,10 +191,11 @@ namespace CarService
             // 
             // RECImg1
             // 
-            this.RECImg1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RECImg1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.RECImg1.Location = new System.Drawing.Point(12, 142);
             this.RECImg1.Name = "RECImg1";
             this.RECImg1.Size = new System.Drawing.Size(250, 180);
+            this.RECImg1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RECImg1.TabIndex = 135;
             this.RECImg1.TabStop = false;
             // 
@@ -196,7 +212,7 @@ namespace CarService
             this.btnAddPic2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPic2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPic2.ForeColor = System.Drawing.Color.Black;
-            this.btnAddPic2.Location = new System.Drawing.Point(353, 328);
+            this.btnAddPic2.Location = new System.Drawing.Point(303, 328);
             this.btnAddPic2.Name = "btnAddPic2";
             this.btnAddPic2.Size = new System.Drawing.Size(84, 40);
             this.btnAddPic2.TabIndex = 136;
@@ -207,19 +223,21 @@ namespace CarService
             // 
             // RECImg2
             // 
-            this.RECImg2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RECImg2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.RECImg2.Location = new System.Drawing.Point(268, 142);
             this.RECImg2.Name = "RECImg2";
             this.RECImg2.Size = new System.Drawing.Size(250, 180);
+            this.RECImg2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RECImg2.TabIndex = 137;
             this.RECImg2.TabStop = false;
             // 
             // RECImg3
             // 
-            this.RECImg3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RECImg3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.RECImg3.Location = new System.Drawing.Point(523, 142);
             this.RECImg3.Name = "RECImg3";
             this.RECImg3.Size = new System.Drawing.Size(250, 180);
+            this.RECImg3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RECImg3.TabIndex = 138;
             this.RECImg3.TabStop = false;
             // 
@@ -236,7 +254,7 @@ namespace CarService
             this.btnAddPic3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPic3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPic3.ForeColor = System.Drawing.Color.Black;
-            this.btnAddPic3.Location = new System.Drawing.Point(613, 328);
+            this.btnAddPic3.Location = new System.Drawing.Point(554, 328);
             this.btnAddPic3.Name = "btnAddPic3";
             this.btnAddPic3.Size = new System.Drawing.Size(84, 40);
             this.btnAddPic3.TabIndex = 139;
@@ -309,11 +327,119 @@ namespace CarService
             this.label1.TabIndex = 179;
             this.label1.Text = "วันเกิดเหตุ";
             // 
+            // btnZoomP3
+            // 
+            this.btnZoomP3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnZoomP3.Image = ((System.Drawing.Image)(resources.GetObject("btnZoomP3.Image")));
+            this.btnZoomP3.Location = new System.Drawing.Point(710, 333);
+            this.btnZoomP3.Name = "btnZoomP3";
+            this.btnZoomP3.Size = new System.Drawing.Size(40, 35);
+            this.btnZoomP3.TabIndex = 188;
+            this.btnZoomP3.TabStop = false;
+            this.btnZoomP3.Click += new System.EventHandler(this.btnZoomP3_Click);
+            // 
+            // btnZoomP2
+            // 
+            this.btnZoomP2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnZoomP2.Image = ((System.Drawing.Image)(resources.GetObject("btnZoomP2.Image")));
+            this.btnZoomP2.Location = new System.Drawing.Point(459, 333);
+            this.btnZoomP2.Name = "btnZoomP2";
+            this.btnZoomP2.Size = new System.Drawing.Size(40, 35);
+            this.btnZoomP2.TabIndex = 187;
+            this.btnZoomP2.TabStop = false;
+            this.btnZoomP2.Click += new System.EventHandler(this.btnZoomP2_Click);
+            // 
+            // btnZoomP1
+            // 
+            this.btnZoomP1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnZoomP1.Image = ((System.Drawing.Image)(resources.GetObject("btnZoomP1.Image")));
+            this.btnZoomP1.Location = new System.Drawing.Point(203, 333);
+            this.btnZoomP1.Name = "btnZoomP1";
+            this.btnZoomP1.Size = new System.Drawing.Size(40, 35);
+            this.btnZoomP1.TabIndex = 183;
+            this.btnZoomP1.TabStop = false;
+            this.btnZoomP1.Click += new System.EventHandler(this.btnZoomP1_Click);
+            // 
+            // btnDelPic3
+            // 
+            this.btnDelPic3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelPic3.BackColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic3.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelPic3.BorderRadius = 20;
+            this.btnDelPic3.BorderSize = 0;
+            this.btnDelPic3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelPic3.Enabled = false;
+            this.btnDelPic3.FlatAppearance.BorderSize = 0;
+            this.btnDelPic3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelPic3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelPic3.ForeColor = System.Drawing.Color.Black;
+            this.btnDelPic3.Location = new System.Drawing.Point(644, 328);
+            this.btnDelPic3.Name = "btnDelPic3";
+            this.btnDelPic3.Size = new System.Drawing.Size(60, 40);
+            this.btnDelPic3.TabIndex = 186;
+            this.btnDelPic3.Text = "ลบ";
+            this.btnDelPic3.TextColor = System.Drawing.Color.Black;
+            this.btnDelPic3.UseVisualStyleBackColor = false;
+            this.btnDelPic3.Click += new System.EventHandler(this.btnDelPic3_Click);
+            // 
+            // btnDelPic2
+            // 
+            this.btnDelPic2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelPic2.BackColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic2.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelPic2.BorderRadius = 20;
+            this.btnDelPic2.BorderSize = 0;
+            this.btnDelPic2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelPic2.Enabled = false;
+            this.btnDelPic2.FlatAppearance.BorderSize = 0;
+            this.btnDelPic2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelPic2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelPic2.ForeColor = System.Drawing.Color.Black;
+            this.btnDelPic2.Location = new System.Drawing.Point(393, 328);
+            this.btnDelPic2.Name = "btnDelPic2";
+            this.btnDelPic2.Size = new System.Drawing.Size(60, 40);
+            this.btnDelPic2.TabIndex = 185;
+            this.btnDelPic2.Text = "ลบ";
+            this.btnDelPic2.TextColor = System.Drawing.Color.Black;
+            this.btnDelPic2.UseVisualStyleBackColor = false;
+            this.btnDelPic2.Click += new System.EventHandler(this.btnDelPic2_Click);
+            // 
+            // btnDelPic1
+            // 
+            this.btnDelPic1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelPic1.BackColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic1.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.btnDelPic1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelPic1.BorderRadius = 20;
+            this.btnDelPic1.BorderSize = 0;
+            this.btnDelPic1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelPic1.Enabled = false;
+            this.btnDelPic1.FlatAppearance.BorderSize = 0;
+            this.btnDelPic1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelPic1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelPic1.ForeColor = System.Drawing.Color.Black;
+            this.btnDelPic1.Location = new System.Drawing.Point(137, 328);
+            this.btnDelPic1.Name = "btnDelPic1";
+            this.btnDelPic1.Size = new System.Drawing.Size(60, 40);
+            this.btnDelPic1.TabIndex = 184;
+            this.btnDelPic1.Text = "ลบ";
+            this.btnDelPic1.TextColor = System.Drawing.Color.Black;
+            this.btnDelPic1.UseVisualStyleBackColor = false;
+            this.btnDelPic1.Click += new System.EventHandler(this.btnDelPic1_Click);
+            // 
             // frmAddLine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 441);
+            this.Controls.Add(this.btnZoomP3);
+            this.Controls.Add(this.btnZoomP2);
+            this.Controls.Add(this.btnZoomP1);
+            this.Controls.Add(this.btnDelPic3);
+            this.Controls.Add(this.btnDelPic2);
+            this.Controls.Add(this.btnDelPic1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpDocDateFrom);
             this.Controls.Add(this.txtREC_ID);
@@ -341,6 +467,9 @@ namespace CarService
             ((System.ComponentModel.ISupportInitialize)(this.RECImg1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RECImg2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RECImg3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnZoomP3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnZoomP2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnZoomP1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +496,11 @@ namespace CarService
         private System.Windows.Forms.TextBox txtREC_ID;
         private System.Windows.Forms.DateTimePicker dtpDocDateFrom;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox btnZoomP3;
+        private System.Windows.Forms.PictureBox btnZoomP2;
+        private System.Windows.Forms.PictureBox btnZoomP1;
+        private Class.RJButton btnDelPic3;
+        private Class.RJButton btnDelPic2;
+        private Class.RJButton btnDelPic1;
     }
 }

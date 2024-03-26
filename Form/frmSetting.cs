@@ -40,8 +40,15 @@ namespace CarService
                 return;
             }
 
+            string MinMaxDP = txtNumREC.Text;
+            string[] array = MinMaxDP.Split('/');
+            decimal min = decimal.Parse(array[0]);
+            decimal max = decimal.Parse(array[1]);
+            decimal maxInputDP = max - min;//DP max Adjust
+
             frmAddLine f = new frmAddLine();
             f.Text = "เพิ่มหัวข้อปัญหา " + TXTHDR_DESC.Text;
+            f.maxInputDP = maxInputDP;
             string empid = txtEmpID.Text;
             addLine(txtEmpID.Text, f.newMessage, f.newDP, f.newPP1, f.newPP2, f.newPP3);
             f.uponNew(Rec_ID_Recall, empid, cmb_Year.SelectedValue.ToString());
